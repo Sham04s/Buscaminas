@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-border-color: red;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.WindowController">
+   <children>
+      <SplitPane dividerPositions="0.2" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: black; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane fx:id="sidePane" minWidth="-Infinity" prefWidth="252.0" style="-fx-background-color: gray;">
+               <children>
+                  <VBox fx:id="vbSidePane" alignment="CENTER" layoutX="47.0" layoutY="83.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <children>
+                        <VBox fx:id="vbMines" alignment="TOP_CENTER" prefHeight="73.0" prefWidth="158.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="171.0" text="Minas Faltantes" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Consolas Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblMines" alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="92.0" style="-fx-background-color: black;" text="0" textAlignment="CENTER" textFill="RED">
+                                 <font>
+                                    <Font name="Consolas Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox fx:id="vbBestTime" alignment="TOP_CENTER" layoutX="48.0" layoutY="83.0" prefHeight="73.0" prefWidth="158.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="171.0" text="Mejor Tiempo" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Consolas Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblBestTime" alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="112.0" style="-fx-background-color: black;" text="00:00" textAlignment="CENTER" textFill="YELLOW">
+                                 <font>
+                                    <Font name="Consolas Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox fx:id="vbTime" alignment="TOP_CENTER" fillWidth="false" layoutX="61.0" layoutY="211.0" prefHeight="73.0" prefWidth="80.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="141.0" text="Tiempo" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Consolas Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblTime" alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="140.0" style="-fx-background-color: black;" text="00:00" textAlignment="CENTER" textFill="LIME">
+                                 <font>
+                                    <Font name="Consolas Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox fx:id="vbGameControl" alignment="BOTTOM_CENTER" layoutX="47.0" layoutY="340.0" prefHeight="317.0" prefWidth="158.0" spacing="20.0">
+                           <children>
+                              <ComboBox fx:id="cbBxDifficulty" prefHeight="31.0" prefWidth="166.0" promptText="Dificultad" />
+                              <HBox fx:id="hbGameProperties" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="113.0" prefWidth="143.0" spacing="20.0">
+                                       <children>
+                                          <Label text="Filas">
+                                             <font>
+                                                <Font name="Consolas" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Columnas">
+                                             <font>
+                                                <Font name="Consolas" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Minas">
+                                             <font>
+                                                <Font name="Consolas" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="8.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox fx:id="vbTxtProperties" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                          <TextField fx:id="txtFilas" alignment="CENTER" disable="true" prefHeight="0.0" prefWidth="57.0">
+                                             <font>
+                                                <Font name="Consolas" size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtColumnas" alignment="CENTER" disable="true" prefHeight="0.0" prefWidth="57.0">
+                                             <font>
+                                                <Font name="Consolas" size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <TextField fx:id="txtMinas" alignment="CENTER" disable="true" prefHeight="57.0" prefWidth="57.0">
+                                             <font>
+                                                <Font name="Consolas" size="15.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                       <padding>
+                                          <Insets right="8.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnNewGame" mnemonicParsing="false" onAction="#newGame" prefHeight="28.0" prefWidth="115.0" text="Nuevo Juego">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnReset" mnemonicParsing="false" onAction="#reset" prefHeight="28.0" prefWidth="101.0" text="Reiniciar">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnExit" mnemonicParsing="false" onAction="#close" prefHeight="28.0" prefWidth="67.0" text="Salir">
+                                 <font>
+                                    <Font name="Consolas" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="8.0" right="8.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+            <AnchorPane fx:id="drawingPane" minWidth="-Infinity" onMouseClicked="#mouseHandler" onMouseExited="#mouseHandler" onMouseMoved="#mouseHandler" prefWidth="252.0" style="-fx-background-color: gray;" />
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
